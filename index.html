@@ -17,9 +17,9 @@
             text-decoration: none;
         }
         a:hover{
-            background-color: #c9cfcd;
+            background-color: #f5f5f5;
         }
-        .description {
+        .api_info {
 
         }
         #HolidayName {
@@ -29,11 +29,11 @@
 	<script>
 		function getHoliday() {
 			request = new XMLHttpRequest();
-			console.log("1 - request object created");
+			console.log("request object created");
 
 		    request.open("GET", "https://holidayapi.com/v1/holidays?pretty&key=05362d8b-4ff7-4e6d-aa00-9392724375f2&country=US&year=2020", true)
 
-			console.log("2 - opened request file");
+			console.log("opened request file");
 
 			request.onreadystatechange = function() {
 
@@ -41,7 +41,7 @@
 
                     let holiday_info = document.getElementById("HolidayName")
                     holiday_info.innerHTML=""
-					console.log("5 - response received");
+					console.log("response received");
 					result = request.responseText;
 					response = JSON.parse(result);
                     holidayArr = response.holidays
@@ -53,12 +53,12 @@
 				}
 				else if (request.readyState == 4 && request.status != 200) {
 
-					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+					document.getElementById("data").innerHTML = "Something went wrong! Try again.";
 
 				}
 			}
 			request.send();
-			console.log("4 - Request sent");
+			console.log("request sent");
 		}
 
 	</script>
@@ -69,22 +69,24 @@
 
 	<h1>Holidays</h1>
 	<div id="data">
-        Welcome! Click to get a random holiday in 2021?
+        Welcome! Click to get a random holiday in 2020.
     </div>
     <form name="holiday_form">
         <!-- <input id= "holiday_date" type="text" placeholder="Enter the country's name"> -->
-        <input type="button" id="submit" value ="Get random US holiday!" onclick="getHoliday()">
+        <input type="button" id="submit" value ="Get US Holiday" onclick="getHoliday()">
         <div id="HolidayName">
             &nbsp;
         </div>
-        <div class="description">
-            Hope you enjoy this usability of an API! I am currently using <a href="https://holidayapi.com/">Holiday API</a>.
-            It provides holidays in the US on 2020. Make sure to check it out!
+        <div class="api_info">
+            Hope you enjoy this usability of an API! I am currently using <a href="https://holidayapi.com/">this Holiday API</a>.
+            It provides holidays in the US during the 2020 calendar year. Make sure to check it out!
             <br>
-            I created an XMLHttpRequest object, opened the JSON file holding the holiday information with a GET request, and extracted information when my request was validated.
+            I did this assignment by creating an XMLHttpRequest object, then opening the JSON file holding the holiday information with a GET request, and finally extracting the information when the request was validated.
             <br>
-            Two ways to use this: <ul><li>Learn about the cultures in America's melting pot! It is always a fulfilling experience to learn about all the traditions being celebrated in the USA year-round.</li>
-                <li>Become familiar with holidays in the US and create an widely inclusive yearly calendar!</li>
+            There are two ways to use this API. You can:
+            <ul>
+              <li>Learn about the cultures in America's melting pot! It is always a fulfilling experience to learn about all the traditions being celebrated in the USA year-round.</li>
+              <li>Become familiar with holidays in the US and create an widely inclusive yearly calendar!</li>
             </ul>
         </div>
     </form>
