@@ -7,7 +7,7 @@ function setup() {
   button.mousePressed(getCountry);
 }
 
-function getCountry(countryName) {
+function getCountry() {
   let xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://restcountries.com/v3.1/name/'+countryName, true);
   xhr.send();
