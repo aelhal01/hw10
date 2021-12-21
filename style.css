@@ -51,6 +51,7 @@ input:hover {
 
 #HolidayName{
   display: block;
+  font-size: 40px;
   padding: 7px;
   background-color: #fff;
   color: black;
