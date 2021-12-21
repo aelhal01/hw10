@@ -1,9 +1,8 @@
 let countriesContainer = document.querySelector(.countries);
+
 function getCountry(countryName) {
   let xhr = new XMLHttpRequest();
-
   xhr.open('GET', 'https://restcountries.com/v3.1/name/'+countryName, true);
-
   xhr.send();
 
   xhr.addEventListener('load', function(){

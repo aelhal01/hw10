@@ -10,7 +10,7 @@
     <h1>Country Statistics API</h1>
 
 	<form>
-		<input id="country" class="country"placeholder="Enter country name:">
+		<input id="country" class="country" placeholder="Enter country name:">
 		<button class="submit btn btn-info">Submit</button>
 	</form>
 
@@ -23,14 +23,18 @@
     <div class="questions">
         <br><br>
         <h3>API Information:</h3>
-        <p>This API displays a list of universities in a specified country.</p>
-        <p>Where this API was found: <a href="http://universities.hipolabs.com/search?country=United+States">API Documentation</a></p>
+        <p>
+          This API displays a list of data respective to the selected country.
+          It includes its image, its name, the region it's located in, its population,
+          the main spoken language, and the currency used.
+        </p>
+        <p>Where this API was found: <a href="https://restcountries.com/">API Documentation</a></p>
         <p>Options used for the API request:
-            <br>- used GET with the following URL to get the pokemon name and type: http://universities.hipolabs.com/search?country=United+States
+            <br>- used GET with the following URL to get the country's data: https://restcountries.com/v3.1/name/{name}
         </p>
         <p>Application for this API:
-            <br>1. To be used for a platform that helps with college searches and applications
-            <br>2. To be used by high school students to view their qpplication options depending on their country of interest</p>
+            <br>1. To be used for a travel website to display general but important information about the country the user wants to travel to.
+            <br>2. To be used by geography students for a quick overview of general but important data and demographics of a country.</p>
     </div>
 
 </body>
