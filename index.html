@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <h1>Country University Search API</h1>
+
+	<form>
+		<input id="country" class="country"placeholder="Enter country name:">
+		<button class="submit btn btn-info">Submit</button>
+	</form>
+
+	<div class="uni-details">
+		<h2>Name: </h2><span><p class="name"></p></span>
+		<h2>Website: </h2><span><p class="web-pages"></p></span>
+	</div>
+
+    <br><br>
+    <div class="questions">
+        <br><br>
+        <h3>API Information:</h3>
+        <p>This API displays a list of universities in a specified country.</p>
+        <p>Where this API was found: <a href="http://universities.hipolabs.com/search?country=United+States">API Documentation</a></p>
+        <p>Options used for the API request:
+            <br>- used GET with the following URL to get the pokemon name and type: http://universities.hipolabs.com/search?country=United+States
+        </p>
+        <p>Application for this API:
+            <br>1. To be used for a platform that helps with college searches and applications
+            <br>2. To be used by high school students to view their qpplication options depending on their country of interest</p>
+    </div>
+
+</body>
+<script src="uni.js"></script>
+
+</html>
