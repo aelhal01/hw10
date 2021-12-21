@@ -2,7 +2,11 @@ let countriesContainer = document.querySelector(.countries);
 
 var countryName = $('input').val();
 
-function
+function setup() {
+  var button = select('#submit');
+  button.mousePressed(getCountry);
+}
+
 function getCountry(countryName) {
   let xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://restcountries.com/v3.1/name/'+countryName, true);
@@ -27,7 +31,3 @@ function getCountry(countryName) {
     countriesContainer.insertAdjacentHTML('beforeend', html);
   });
 }
-
-getCountry('usa');
-getCountry('brazil');
-getCountry('germany');
