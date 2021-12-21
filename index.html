@@ -14,16 +14,16 @@
 		<button id="submit" class="submit btn btn-info">Submit</button>
 	</form>
 
-  <div class="countries">
+  <div id="countries" class="countries">
     <script src="script.js"></script>
     <article class="country">
-      <img class="country_image" src="${data.flag}" />
+      <img id="country_image" class="country_image" src=""/>
       <div class="country_data">
-        <h3 class="country_name">${data.name}</h3>
-        <h4 class="country_region">${data.region}</h4>
-        <p class="country_row"><span class="ion-ios-people"</span>${data.population}</p>
-          <p class="country_row"><span class="ion-ios-mic"</span>${data.languages[0].name}</p>
-        <p class="country_row"><span class="ion-social-usd"</span>${data.currencies[0].name}</p>
+        <h3 id="country_name" class="country_name"></h3>
+        <h4 id="country_region" class="country_region"></h4>
+        <p class="country_row"><span id="ion-ios-people" class="ion-ios-people"></span>></p>
+          <p class="country_row"><span id="ion-ios-mic" class="ion-ios-mic"></span>></p>
+        <p class="country_row"><span id="ion-social-usd" class="ion-social-usd"></span>></p>
       </div>
     </article>
   </div>
