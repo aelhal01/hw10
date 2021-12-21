@@ -3,29 +3,8 @@
 <head>
 	<title>Holiday API</title>
 	<meta charset="utf-8"/>
-    <style>
-        body {
-            margin: 10px;
-            padding: 0 25%;
-            background-color: #dcbcee;
-        }
-        input {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        a {
-            color: rgba(35, 77, 214, 0.533);
-            text-decoration: none;
-        }
-        a:hover{
-            background-color: #f5f5f5;
-        }
-        .api_info {
+  <link href="style.css" rel="stylesheet" />
 
-        }
-        #HolidayName {
-            margin: 5px;
-        }
-    </style>
 	<script>
 		function getHoliday() {
 			request = new XMLHttpRequest();
@@ -66,29 +45,61 @@
 
 
 <body>
+  <!--Get a random holiday in the 2020 calendar year-->
+  <div class= "holidayDetails">
+    <h1>USA 2020 Holidays API</h1>
 
-	<h1>Holidays</h1>
-	<div id="data">
-        Welcome! Click to get a random holiday in 2020.
-    </div>
-    <form name="holiday_form">
-        <!-- <input id= "holiday_date" type="text" placeholder="Enter the country's name"> -->
-        <input type="button" id="submit" value ="Get US Holiday" onclick="getHoliday()">
-        <div id="HolidayName">
-            &nbsp;
-        </div>
-        <div class="api_info">
-            Hope you enjoy this usability of an API! I am currently using <a href="https://holidayapi.com/">this Holiday API</a>.
-            It provides holidays in the US during the 2020 calendar year. Make sure to check it out!
-            <br>
-            I did this assignment by creating an XMLHttpRequest object, then opening the JSON file holding the holiday information with a GET request, and finally extracting the information when the request was validated.
-            <br>
-            There are two ways to use this API. You can:
-            <ul>
-              <li>Learn about the cultures in America's melting pot! It is always a fulfilling experience to learn about all the traditions being celebrated in the USA year-round.</li>
-              <li>Become familiar with holidays in the US and create an widely inclusive yearly calendar!</li>
-            </ul>
-        </div>
+    <form>
+      <button id="submit" onclick="getHoliday()">Get a random holiday in 2020!</button>
     </form>
-</body>
+
+    <div id="HolidayName">
+      &nbsp;
+    </div>
+  </div>
+
+  <br><br>
+
+  <!--API Details-->
+  <div class="api_info">
+
+    <br>
+
+    <h3>API Information</h3>
+    <p>This website is using <a href="https://holidayapi.com/">this Holiday API</a>.
+      It provides random holidays celebrated in the US during the 2020 calendar year. Make sure to check it out!</p>
+
+    <p>
+      <strong>Options used for the API request:</strong>
+      <br>I did this assignment by creating an XMLHttpRequest object, then opening the JSON file holding the holiday information with a GET request, and finally extracting the information when the request was validated.
+    </p>
+
+      <p>
+        <strong>Application for this API:</strong>
+        With this API, you can:
+        <ul>
+          <li>Learn about the cultures in America's melting pot! It is always a fulfilling experience to learn about all the traditions being celebrated in the USA year-round.</li>
+          <li>Become familiar with holidays in the US and create an widely inclusive yearly calendar!</li>
+        </ul>
+      </p>
+    </div>
+   </body>
+ </html>
+
+
+
+
+  <div class="api_info">
+    Hope you enjoy this usability of an API! I am currently using <a href="https://holidayapi.com/">this Holiday API</a>.
+    It provides holidays in the US during the 2020 calendar year. Make sure to check it out!
+    <br>
+    I did this assignment by creating an XMLHttpRequest object, then opening the JSON file holding the holiday information with a GET request, and finally extracting the information when the request was validated.
+    <br>
+    There are two ways to use this API. You can:
+    <ul>
+      <li>Learn about the cultures in America's melting pot! It is always a fulfilling experience to learn about all the traditions being celebrated in the USA year-round.</li>
+      <li>Become familiar with holidays in the US and create an widely inclusive yearly calendar!</li>
+    </ul>
+   </div>
+  </body>
 </html>
