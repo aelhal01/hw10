@@ -53,6 +53,7 @@ button:hover {
   display: block;
   padding: 7px;
   background-color: #fff;
+  color: black;
 }
 
 .api_info {

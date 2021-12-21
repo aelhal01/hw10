@@ -17,29 +17,27 @@
 			request.onreadystatechange = function() {
 
 				if (request.readyState == 4 && request.status == 200) {
-
-                    let holiday_info = document.getElementById("HolidayName")
-                    holiday_info.innerHTML=""
+          let holiday_info = document.getElementById("HolidayName")
+          holiday_info.innerHTML=""
 					console.log("response received");
+
 					result = request.responseText;
+
 					response = JSON.parse(result);
-                    holidayArr = response.holidays
-                    console.log(holidayArr);
-                    rand_index = Math.floor(Math.random() * holidayArr.length)
-                    myHoliday = holidayArr[rand_index]
+          holidayArr = response.holidays
+          console.log(holidayArr);
+          rand_index = Math.floor(Math.random() * holidayArr.length)
+          myHoliday = holidayArr[rand_index]
 
-                    holiday_info.innerHTML = myHoliday.name + '<br />' + "Date: " + myHoliday.date
+          holiday_info.innerHTML = myHoliday.name + '<br />' + "Date: " + myHoliday.date
 				}
-				else if (request.readyState == 4 && request.status != 200) {
-
-					document.getElementById("data").innerHTML = "Something went wrong! Try again.";
-
-				}
+			 else if (request.readyState == 4 && request.status != 200) {
+        document.getElementById("data").innerHTML = "Something went wrong! Try again.";
+			 }
 			}
 			request.send();
 			console.log("request sent");
 		}
-
 	</script>
 </head>
 
@@ -79,7 +77,7 @@
         With this API, you can:
         <ul>
           <li>Learn about the cultures in America's melting pot! It is always a fulfilling experience to learn about all the traditions being celebrated in the USA year-round.</li>
-          <li>Become familiar with holidays in the US and create an widely inclusive yearly calendar!</li>
+          <li>Become familiar with holidays in the US and create an inclusive year-long calendar!</li>
         </ul>
       </p>
     </div>
