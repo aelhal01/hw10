@@ -15,9 +15,18 @@
 	</form>
 
   <div class="countries">
+    <script src="script.js"></script>
+    <article class="country">
+      <img class="country_image" src="${data.flag}" />
+      <div class="country_data">
+        <h3 class="country_name">${data.name}</h3>
+        <h4 class="country_region">${data.region}</h4>
+        <p class="country_row"><span class="ion-ios-people"</span>${data.population}</p>
+          <p class="country_row"><span class="ion-ios-mic"</span>${data.languages[0].name}</p>
+        <p class="country_row"><span class="ion-social-usd"</span>${data.currencies[0].name}</p>
+      </div>
+    </article>
   </div>
-
-  <script src="script.js"></script>
 
   <br><br>
 
