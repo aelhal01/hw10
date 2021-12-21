@@ -43,16 +43,17 @@
 
 <body>
   <!--Get a random holiday in the 2020 calendar year-->
-  <div class= "holidayDetails">
+  <div id="data">
     <h1>USA 2020 Holidays API</h1>
 
-    <form>
-      <button id="submit" onclick="getHoliday()">Click me to get a random holiday in 2020!</button>
-    </form>
+    <form name="holiday_form">
+      <!-- <input id= "holiday_date" type="text" placeholder="Enter the country's name"> -->
+        <input type="button" id="submit" value ="Click me to get a random holiday in 2020!" onclick="getHoliday()">
 
-    <div id="HolidayName">
-      &nbsp;
-    </div>
+        <div id="HolidayName">
+          &nbsp;
+        </div>
+    </form>
   </div>
 
   <br><br>
