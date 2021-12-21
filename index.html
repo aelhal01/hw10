@@ -1,55 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link href="style.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <title>API Fun!</title>
+	<title>Holiday API</title>
+	<meta charset="utf-8"/>
+    <style>
+        body {
+            margin: 10px;
+            padding: 0 25%;
+            background-color: #dcbcee;
+        }
+        input {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a {
+            color: rgba(35, 77, 214, 0.533);
+            text-decoration: none;
+        }
+        a:hover{
+            background-color: #c9cfcd;
+        }
+        .description {
+
+        }
+        #HolidayName {
+            margin: 5px;
+        }
+    </style>
+	<script>
+		function getHoliday() {
+			request = new XMLHttpRequest();
+			console.log("1 - request object created");
+
+		    request.open("GET", "https://holidayapi.com/v1/holidays?pretty&key=155c2f04-6604-4b87-9ee8-5656bae47065&country=US&year=2021", true)
+
+			console.log("2 - opened request file");
+
+			request.onreadystatechange = function() {
+
+				if (request.readyState == 4 && request.status == 200) {
+
+                    let holiday_info = document.getElementById("HolidayName")
+                    holiday_info.innerHTML=""
+					console.log("5 - response received");
+					result = request.responseText;
+					response = JSON.parse(result);
+                    holidayArr = response.holidays
+                    console.log(holidayArr);
+                    rand_index = Math.floor(Math.random() * holidayArr.length)
+                    myHoliday = holidayArr[rand_index]
+
+                    holiday_info.innerHTML = myHoliday.name + '<br />' + "Date: " + myHoliday.date
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+
+					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+
+				}
+			}
+			request.send();
+			console.log("4 - Request sent");
+		}
+
+	</script>
 </head>
 
+
 <body>
-    <h1>Country Statistics API</h1>
 
-  <!--Search for country-->
-	<form>
-		<input id="countrySearch" class="countrySearch" placeholder="Enter country name">
-		<button id="submit" class="submit btn btn-info">Submit</button>
-	</form>
-
-    <!--Display chosen country info-->
-    <div id="countries" class="countries">
-    <script src="script.js"></script>
-    <article class="country">
-        <!--<img id="country_image" class="country_image" src=""/>Search for country-->
-      <div class="country_data">
-        <h3 id="country_name" class="country_name"></h3>
-        <h4 id="country_region" class="country_region"></h4>
-        <p class="country_row"><span id="ion-ios-people" class="ion-ios-people"></span></p>
-          <p class="country_row"><span id="ion-ios-mic" class="ion-ios-mic"></span></p>
-        <p class="country_row"><span id="ion-social-usd" class="ion-social-usd"></span></p>
-      </div>
-    </article>
-  </div>
-
-  <br><br>
-
-    <!--API Specifics-->
-    <div class="questions">
-    <br><br>
-    <h3>API Information:</h3>
-    <p>
-      This API displays a list of data respective to the selected country.
-      It includes its image, its name, the region it's located in, its population, the main spoken language, and the currency used.
-    </p>
-    <p>Where this API was found: <a href="https://restcountries.com/">API Documentation</a></p>
-    <p><strong>Options used for the API request:</strong>
-      <br>
-      I created an XMLHttpRequest object, opened the JSON file holding the country's data with a GET request, and extracted information when my request was validated.
-    </p>
-    <p><strong>Application for this API:</strong>
-      <br>1. To be used for a flight or booking website to display general but important information about the country the user wants to travel to.
-      <br>2. To be used by geography students for a quick overview of general but important data and demographics of a country.</p>
-   </div>
-
- </body>
+	<h1>Holidays</h1>
+	<div id="data">
+        Welcome! Click to get a random holiday in 2021?
+    </div>
+    <form name="holiday_form">
+        <!-- <input id= "holiday_date" type="text" placeholder="Enter the country's name"> -->
+        <input type="button" id="submit" value ="Get random US holiday!" onclick="getHoliday()">
+        <div id="HolidayName">
+            &nbsp;
+        </div>
+        <div class="description">
+            Hope you enjoy this usability of an API! I am currently using <a href="https://holidayapi.com/">Holiday API</a>.
+            It provides holidays in the US on 2021. Make sure to check it out!
+            <br>
+            I created an XMLHttpRequest object, opened the JSON file holding the holiday information with a GET request, and extracted information when my request was validated.
+            <br>
+            Two ways to use this: <ul><li>Learn about the cultures in America's melting pot! It is always a fulfilling experience to learn about all the traditions being celebrated in the USA year-round.</li>
+                <li>It could also be useful to create a program that randomly assigns a real holiday to a character, for example, in a book or video game!</li>
+            </ul>
+        </div>
+    </form>
+</body>
 </html>
