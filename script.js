@@ -1,4 +1,4 @@
-let countriesContainer = document.querySelector(.countries);
+let countriesContainer = document.querySelector('.countries');
 
 var chosen_countryName = $('input').val();
 
