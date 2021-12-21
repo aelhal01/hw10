@@ -43,7 +43,7 @@ input {
   cursor: pointer;
 }
 
-button:hover {
+input:hover {
   border: 1px solid #fff;
   background: #CB0001;
   transition: 1s;
