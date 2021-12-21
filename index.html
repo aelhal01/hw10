@@ -14,30 +14,26 @@
 		<button class="submit btn btn-info">Submit</button>
 	</form>
 
-	<div class="uni-details">
-		<h2>Name: </h2><span><p class="name"></p></span>
-		<h2>Website: </h2><span><p class="web-pages"></p></span>
-	</div>
+  <script src="script.js"></script>
 
+  <br><br>
+
+  <div class="questions">
     <br><br>
-    <div class="questions">
-        <br><br>
-        <h3>API Information:</h3>
-        <p>
-          This API displays a list of data respective to the selected country.
-          It includes its image, its name, the region it's located in, its population,
-          the main spoken language, and the currency used.
-        </p>
-        <p>Where this API was found: <a href="https://restcountries.com/">API Documentation</a></p>
-        <p>Options used for the API request:
-            <br>- used GET with the following URL to get the country's data: https://restcountries.com/v3.1/name/{name}
-        </p>
-        <p>Application for this API:
-            <br>1. To be used for a travel website to display general but important information about the country the user wants to travel to.
-            <br>2. To be used by geography students for a quick overview of general but important data and demographics of a country.</p>
-    </div>
+    <h3>API Information:</h3>
+    <p>
+      This API displays a list of data respective to the selected country.
+      It includes its image, its name, the region it's located in, its population,the main spoken language, and the currency used.
+    </p>
+    <p>Where this API was found: <a href="https://restcountries.com/">API Documentation</a></p>
+    <p>Options used for the API request:
+      <br>
+      I created an XMLHttpRequest object, opened the JSON file holding the country's data with a GET request, and extracted information when my request was validated.
+    </p>
+    <p>Application for this API:
+      <br>1. To be used for a flight or booking website to display general but important information about the country the user wants to travel to.
+      <br>2. To be used by geography students for a quick overview of general but important data and demographics of a country.</p>
+   </div>
 
-</body>
-<script src="script.js"></script>
-
+ </body>
 </html>
