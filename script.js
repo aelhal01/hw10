@@ -17,8 +17,8 @@ function getCountry(countryName) {
     let [data] = JSON.parse(xhr.responseText);
 
     //Replace country image source in HTML file
-    let countryImage = document.getElementById("country_image").src;
-    countryImage.innerHTML = ${data.flag};
+    //let countryImage = document.getElementById("country_image").src;
+    //countryImage.innerHTML = ${data.flag};
 
     //Replace country name in HTML file
     let countryname = document.getElementById("country_name");

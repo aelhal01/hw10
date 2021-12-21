@@ -31,12 +31,12 @@ input {
   margin: 0.2rem 0.2rem;
 }
 
-.country_img {
+/*.country_img {
   width: 13rem;
   height: 8rem;
   object-fit: cover;
   background-color: #eee;
-}
+}*/
 
 .country_data {
   padding: 0rem 0.2rem;

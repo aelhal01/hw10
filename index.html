@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <title>API Fun!</title>
 </head>
 
 <body>
     <h1>Country Statistics API</h1>
 
+  <!--Search for country-->
 	<form>
 		<input id="countrySearch" class="countrySearch" placeholder="Enter country name">
 		<button id="submit" class="submit btn btn-info">Submit</button>
 	</form>
 
-  <div id="countries" class="countries">
+    <!--Display chosen country info-->
+    <div id="countries" class="countries">
     <script src="script.js"></script>
     <article class="country">
-      <img id="country_image" class="country_image" src=""/>
+        <!--<img id="country_image" class="country_image" src=""/>Search for country-->
       <div class="country_data">
         <h3 id="country_name" class="country_name"></h3>
         <h4 id="country_region" class="country_region"></h4>
@@ -30,7 +33,8 @@
 
   <br><br>
 
-  <div class="questions">
+    <!--API Specifics-->
+    <div class="questions">
     <br><br>
     <h3>API Information:</h3>
     <p>
