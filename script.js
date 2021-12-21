@@ -1,5 +1,8 @@
 let countriesContainer = document.querySelector(.countries);
 
+var countryName = $('input').val();
+
+function
 function getCountry(countryName) {
   let xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://restcountries.com/v3.1/name/'+countryName, true);
